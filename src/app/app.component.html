@@ -18,17 +18,30 @@
     </div>
   </div>
   <div class="setting-panel" *ngIf="currentTab == tabMenu.user">
-    <div class="settingTreeView">ddd</div>
+    <div class="settingTreeView">
+      <span>Commonly Used</span>
+      <tree-root [nodes]="userMenuNodes" [options]="options"></tree-root>
+    </div>
     <div class="settingConfigs">
+      <h5>Commonly Used</h5>
       <app-config
-        *ngFor="let config of workspaceConfigs"
+        *ngFor="let config of userConfigs"
         [configItem]="config"
       ></app-config>
     </div>
   </div>
   <div class="setting-panel" *ngIf="currentTab == tabMenu.workspace">
-    <div class="settingTreeView"></div>
-    <div class="settingConfigs"></div>
+    <div class="settingTreeView">
+      <span>Commonly Used</span>
+      <tree-root [nodes]="workspaceMenuNodes" [options]="options"></tree-root>
+    </div>
+    <div class="settingConfigs">
+      <h5>Commonly Used</h5>
+      <app-config
+        *ngFor="let config of workspaceConfigs"
+        [configItem]="config"
+      ></app-config>
+    </div>
   </div>
   <!--   
   <app-config
