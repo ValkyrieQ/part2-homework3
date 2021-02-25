@@ -1,16 +1,23 @@
 import { Component } from '@angular/core';
 import { Config, ConfigType } from './model/config';
 
+export enum TabSettings {
+  user,
+  workspace,
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  configs: Config[];
+  workspaceConfigs: Config[];
+  tabMenu = TabSettings;
+  currentTab;
 
   constructor() {
-    this.configs = [
+    this.currentTab = TabSettings.user;
+    this.workspaceConfigs = [
       {
         key: 'autoSave',
         groupName: 'Files',
@@ -65,5 +72,9 @@ export class AppComponent {
         arrValue: ['none', 'boundary', 'selection', 'trailing', 'all'],
       },
     ];
+  }
+
+  selectTab(tab: TabSettings) {
+    this.currentTab = tab;
   }
 }

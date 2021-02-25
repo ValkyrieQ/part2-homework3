@@ -5,6 +5,7 @@
 .search {
   border: 1px solid lightgray;
   padding: 5px 5px;
+  margin-bottom: 10px;
 }
 .search > input {
   width: 80%;
@@ -19,6 +20,7 @@
   margin-left: 5px;
   padding: 0px 5px;
   width: 18%;
+  text-align: center;
 }
 
 .search > input:focus,
@@ -26,4 +28,80 @@ select:focus,
 textarea:focus,
 button:focus {
   outline: none;
+}
+
+.tab-menu {
+  border-bottom: 1px solid lightgray;
+}
+
+.tab-menu > div {
+  display: inline-block;
+  padding: 10px;
+}
+
+.tab-menu > div:hover {
+  cursor: pointer;
+}
+
+.active {
+  border-bottom: 1px solid gray;
+}
+
+.setting-panel {
+  margin: 10px 0;
+}
+
+.settingTreeView {
+  display: inline-block;
+  width: 30%;
+  background-color: blueviolet;
+  vertical-align: top;
+  margin-top: 10px;
+}
+
+.settingConfigs {
+  padding-left: 15px;
+  display: inline-block;
+  width: 70%;
+  /* background-color: greenyellow; */
+}
+
+/* ============================= */
+ul,
+#myUL {
+  list-style-type: none;
+}
+
+#myUL {
+  margin: 0;
+  padding: 0;
+}
+
+.caret {
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+}
+
+.caret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.caret-down::before {
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Safari */
+  transform: rotate(90deg);
+}
+
+.nested {
+  display: none;
+}
+
+.active {
+  display: block;
 }

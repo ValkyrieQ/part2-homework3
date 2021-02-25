@@ -3,21 +3,36 @@
     <input type="text" placeholder="Search settings" />
     <div>15 Settings Found</div>
   </div>
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
-        >Disabled</a
-      >
-    </li>
-  </ul>
-  <app-config *ngFor="let config of configs" [configItem]="config"></app-config>
+  <div class="tab-menu">
+    <div
+      [class.active]="currentTab == tabMenu.user"
+      (click)="selectTab(tabMenu.user)"
+    >
+      User Settings
+    </div>
+    <div
+      [class.active]="currentTab == tabMenu.workspace"
+      (click)="selectTab(tabMenu.workspace)"
+    >
+      Workspace Settings
+    </div>
+  </div>
+  <div class="setting-panel" *ngIf="currentTab == tabMenu.user">
+    <div class="settingTreeView">ddd</div>
+    <div class="settingConfigs">
+      <app-config
+        *ngFor="let config of workspaceConfigs"
+        [configItem]="config"
+      ></app-config>
+    </div>
+  </div>
+  <div class="setting-panel" *ngIf="currentTab == tabMenu.workspace">
+    <div class="settingTreeView"></div>
+    <div class="settingConfigs"></div>
+  </div>
+  <!--   
+  <app-config
+    *ngFor="let config of workspaceConfigs"
+    [configItem]="config"
+  ></app-config> -->
 </div>
