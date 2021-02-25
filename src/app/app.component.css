@@ -1,0 +1,29 @@
+.container {
+  padding: 5px 5vw;
+}
+
+.search {
+  border: 1px solid lightgray;
+  padding: 5px 5px;
+}
+.search > input {
+  width: 80%;
+  border: none;
+}
+
+.search > div {
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  background-color: lightgray;
+  margin-left: 5px;
+  padding: 0px 5px;
+  width: 18%;
+}
+
+.search > input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}

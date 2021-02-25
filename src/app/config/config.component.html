@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="main">
+    {{ configItem.groupName }}:
+    <span class="main-config-name">{{ configItem.name }}</span
+    ><span class="main-config-remark">{{ configItem.remark }}</span>
+  </div>
+  <div class="details">{{ configItem.details }}</div>
+  <div class="value">
+    <input type="text" *ngIf="configItem.type === configType.text" />
+    <select *ngIf="configItem.type === configType.dropdown">
+      <option *ngFor="let obj of configItem.arrValue" [value]="obj">
+        {{ obj }}
+      </option>
+    </select>
+  </div>
+</div>
